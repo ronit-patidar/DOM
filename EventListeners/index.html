@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<header id="main-header">
+    <h1 class="title">My Sample Website</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h2>Welcome Section</h2>
+    <p class="text">This is the home section with a short welcome message.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p class="text">We create simple and elegant web pages using HTML and CSS.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" class="input-field">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="input-field">
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <footer id="main-footer">
+    <p class="text">© 2025 My Sample Website. All rights reserved.</p>
+  </footer>
+    <h1 id="id2">Hey,there My name is Ronit Patidar.</h1>
+  <button onclick="console.log('Clicked')">Approach 1</button>
+  <button onclick="handleButtonClicked()">Approach 2</button>
+  <button id = "id">Approach 3</button>
+  <script>
+    // event 
+  // click on button,reload,close page.
+  // approach 1 = onclick is good for one-two line.
+  // approach 2 = create a function then call in online.
+  // limitation -> onclick can override 
+  // approach 3 = addEventListener✅
+  function handleButtonClicked(){
+    console.log("Clicked");
+    alert("This is approach 2");
+  }
+  const el = document.getElementById('id');
+  const el2 = document.getElementById('id2');
+  el.addEventListener('click',()=>{
+    // el2.style.color='red';
+    // console.log(el2.style.color);
+    if(el2.style.color === "green"){
+      el2.style.color = "blue";
+    }
+    else{
+      el2.style.color = "green";
+    }
+  })
+  const allchildren = document.querySelector('body').children;
+  for(let i=0;i<allchildren.length;i++){
+    allchildren.item(i).addEventListener('click',()=>{
+      allchildren.item(i).remove();
+    })
+  }
+
+  </script>
+</body>
+</html>
